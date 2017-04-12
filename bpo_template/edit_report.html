@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main-container %}
+  <div class="container-fluid">
+    <input type="hidden" value="{{ bpo_report }}" id="bpo_report_id"/>
+
+    <div id="react-app"></div>
+  </div>
+{% endblock %}
+
+{% block custom_css %}
+  <link rel="stylesheet" href="{% static 'css/lib/bootstrap-datetimepicker.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/lib/react-input-switch.css' %}"/>
+{% endblock %}
+
+{% block inline_scripts %}
+  <script type="application/javascript"
+          src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="application/javascript"
+          src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/bpo/bpo_edit.js' %}"></script>
+{% endblock %}

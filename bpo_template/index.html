@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main-container %}
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <div class="row">
+        <table class="table table-striped">
+          <tr>
+            <th>Date Created</th>
+            <th>Title</th>
+            <th>Conveyance</th>
+          </tr>
+          {% for report in reports %}
+            <tr>
+              <td>{{ report.date_created }}</td>
+              <td><a href="/bpo/edit_report?report_id={{ report.id }}">{{ report.title }}</a></td>
+              <td>
+                <a href="/map_search?conveyance_id={{ report.conveyance_record }}">
+                  {{ report.conveyance_record.address }}</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block inline_scripts %}
+  <script type="application/javascript"
+          src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="application/javascript"
+          src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+{% endblock %}

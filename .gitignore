@@ -1,0 +1,24 @@
+# Python files
+*.pyc
+.DS_Store
+
+# Eclispe PyCharm projects.
+.idea/
+.project
+.pydevproject
+
+# Project documentations.
+doc/
+
+# Nohup log file.
+nohup.out
+*.log
+*.bak
+*.rdb
+
+# Node modules.
+static/js/alsta_npm/.bin
+static/js/alsta_npm/node_modules/
+
+# Wiki repo.
+wiki/
